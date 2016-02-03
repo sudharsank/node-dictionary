@@ -2,6 +2,7 @@ var express = require("express");
 var cors = require("cors");
 var bodyParser = require("body-parser");
 var app = express();
+var port = process.env.PORT || 3000;
 
 var skierTerms = [
     {
@@ -46,8 +47,8 @@ app.delete("/dictionary-api/:term", function(req, res) {
     res.json(skierTerms);
 });
 
-app.listen(3000);
+app.listen(port);
 
-console.log("Express app running on port 3000");
+console.log("Express app running on port "+port);
 
 module.exports = app;
